@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "31116952841",
+    "project_id": "loguin-57fda",
+    "storage_bucket": "loguin-57fda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31116952841:android:27bd5d5783deac0cf5bfd8",
+        "android_client_info": {
+          "package_name": "com.example.loguin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRFa9M24hn8plVdU_se1tcCbloZHvHGaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31116952841:android:9bf79b1a824da891f5bfd8",
+        "android_client_info": {
+          "package_name": "com.example.tindnetfinal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRFa9M24hn8plVdU_se1tcCbloZHvHGaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
