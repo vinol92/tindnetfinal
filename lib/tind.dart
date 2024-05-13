@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tindnetfinal/carusel.dart';
-import 'package:tindnetfinal/persona_model.dart';
+import 'package:tindnetfinal/models/persona_model.dart';
+import 'package:tindnetfinal/swipe_cards.dart';
 import 'card.dart';
 
 class TinderCard extends StatefulWidget {
@@ -26,49 +27,50 @@ class _TinderCardState extends State<TinderCard> {
   @override
   Widget build(BuildContext context) {
     List<Widget> _pages = [
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CarousselTindNet(
-            user: widget.user,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                onPressed: () {
-                  // Acción al presionar el botón X
-                },
-                icon: Image.asset(
-                  'assets/letra-x.png', // Ruta de la imagen para el botón X
-                  width: 50,
-                  height: 50,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  // Acción al presionar el botón de chat
-                },
-                icon: Image.asset(
-                  'assets/charla.png', // Ruta de la imagen para el botón de chat
-                  width: 50,
-                  height: 50,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  // Acción al presionar el botón del corazón
-                },
-                icon: Image.asset(
-                  'assets/corazon.png', // Ruta de la imagen para el botón del corazón
-                  width: 50,
-                  height: 50,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
+      // Column(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: [
+      //     CarousselTindNet(
+      //       user: widget.user,
+      //     ),
+      //     Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //       children: [
+      //         IconButton(
+      //           onPressed: () {
+      //             // Acción al presionar el botón X
+      //           },
+      //           icon: Image.asset(
+      //             'assets/letra-x.png', // Ruta de la imagen para el botón X
+      //             width: 50,
+      //             height: 50,
+      //           ),
+      //         ),
+      //         IconButton(
+      //           onPressed: () {
+      //             // Acción al presionar el botón de chat
+      //           },
+      //           icon: Image.asset(
+      //             'assets/charla.png', // Ruta de la imagen para el botón de chat
+      //             width: 50,
+      //             height: 50,
+      //           ),
+      //         ),
+      //         IconButton(
+      //           onPressed: () {
+      //             // Acción al presionar el botón del corazón
+      //           },
+      //           icon: Image.asset(
+      //             'assets/corazon.png', // Ruta de la imagen para el botón del corazón
+      //             width: 50,
+      //             height: 50,
+      //           ),
+      //         ),
+      //       ],
+      //     ),
+      //   ],
+      // ),
+      SwipeCardsWidget(),
 
       Column(
         children: [

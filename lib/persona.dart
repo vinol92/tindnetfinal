@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tindnetfinal/persona_model.dart';
+import 'package:tindnetfinal/models/persona_model.dart';
 import 'package:tindnetfinal/tind.dart';
 import '/singup.dart';
 import 'package:firebase_database/firebase_database.dart';

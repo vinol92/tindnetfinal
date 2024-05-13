@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:tindnetfinal/card.dart';
-import 'package:tindnetfinal/persona_model.dart';
+import 'package:tindnetfinal/models/persona_model.dart';
 import 'package:tindnetfinal/user.dart';
 
 class CarousselTindNet extends StatefulWidget {

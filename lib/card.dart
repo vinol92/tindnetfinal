@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tindnetfinal/persona_model.dart';
+import 'package:tindnetfinal/models/persona_model.dart';
 
 class UserCard extends StatelessWidget {
   final Usuario user;

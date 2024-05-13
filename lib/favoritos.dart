@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tindnetfinal/carusel.dart';
-import 'package:tindnetfinal/persona_model.dart';
+import 'package:tindnetfinal/models/persona_model.dart';
 import 'card.dart';
 import 'tind.dart';
 
