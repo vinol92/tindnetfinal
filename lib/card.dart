@@ -3,11 +3,10 @@ import 'package:tindnetfinal/persona_model.dart';
 
 class UserCard extends StatelessWidget {
   final Usuario user;
+  final String imgList;
 
-  const UserCard({
-    Key? key,
-    required this.user,
-  }) : super(key: key);
+  const UserCard({Key? key, required this.user, required this.imgList})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +20,8 @@ class UserCard extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomLeft,
           children: [
-            Image.asset(
-              'assets/user_card_background.jpg', // Cambia la ruta por la de tu imagen de fondo
+            Image.network(
+              imgList, // Cambia la ruta por la de tu imagen de fondo
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity,

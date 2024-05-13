@@ -1,128 +1,138 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:tindnetfinal/carusel.dart';
 import 'package:tindnetfinal/persona_model.dart';
 import 'card.dart';
 
 class TinderCard extends StatefulWidget {
-  final Usuario user;
-
-  const TinderCard({
-    Key? key,
-    required this.user,
-  }) : super(key: key);
-
+  Usuario user;
+  TinderCard({super.key, required this.user});
   @override
   _TinderCardState createState() => _TinderCardState();
 }
 
 class _TinderCardState extends State<TinderCard> {
-  Offset _dragStart = Offset.zero;
-  late Offset _dragPosition;
-  late double _dragDistance;
+  int _selectedIndex = 0; // Índice seleccionado en el BottomNavigationBar
 
-  @override
-  void initState() {
-    super.initState();
-    _dragPosition = Offset.zero;
-    _dragDistance = 0.0;
+  // Lista de Column para mostrar en el cuerpo
+
+  // Función para manejar el cambio de índice en el BottomNavigationBar
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: SizedBox(), // Elimina el botón de retroceso
-        title: SizedBox(), // Elimina el texto del AppBar
-        toolbarHeight: 20, // Ajusta la altura del AppBar
-        backgroundColor: Colors.blue, // Color azul para el AppBar
-      ),
-      body: GestureDetector(
-        onPanStart: (details) {
-          setState(() {
-            _dragStart = details.globalPosition;
-          });
-        },
-        onPanUpdate: (details) {
-          setState(() {
-            _dragPosition = details.globalPosition;
-            _dragDistance = _dragPosition.dx - _dragStart.dx;
-          });
-        },
-        onPanEnd: (details) {
-          setState(() {
-            _dragStart = Offset.zero;
-            _dragPosition = Offset.zero;
-            _dragDistance = 0.0;
-          });
-          // Determinar si se deslizó hacia la derecha o hacia la izquierda
-          bool isSwipedRight = _dragDistance > 0;
-        },
-        child: Transform.translate(
-          offset: Offset(_dragDistance, 0.0),
-          child: Card(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        // Función para el botón de filtro
-                      },
-                      icon: Icon(Icons.filter),
-                      iconSize: 32,
-                    ),
-                    Image.asset(
-                      'assets/TINDNET2.jpg',
-                      width: 120,
-                      height: 40,
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        // Función para el botón de chat
-                      },
-                      icon: Icon(Icons.chat),
-                      iconSize: 32,
-                    ),
-                  ],
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/TINDNET2.jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child:
-                        SizedBox(), // Eliminamos el botón de la casa del centro
-                  ),
-                ),
-                Container(
-                  color: Colors.blue, // Color del BottomNavigationBar
-                  child: BottomNavigationBar(
-                    items: [
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.account_circle),
-                        label: 'Usuario',
-                      ),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.home),
-                        label: 'Inicio',
-                      ),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.favorite),
-                        label: 'Favorito',
-                      ),
-                    ],
-                    onTap: (index) {
-                      // Función para manejar la selección de iconos en el BottomNavigationBar
-                    },
-                  ),
-                ),
-              ],
-            ),
+    List<Widget> _pages = [
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CarousselTindNet(
+            user: widget.user,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                onPressed: () {
+                  // Acción al presionar el botón X
+                },
+                icon: Image.asset(
+                  'assets/letra-x.png', // Ruta de la imagen para el botón X
+                  width: 50,
+                  height: 50,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  // Acción al presionar el botón de chat
+                },
+                icon: Image.asset(
+                  'assets/charla.png', // Ruta de la imagen para el botón de chat
+                  width: 50,
+                  height: 50,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  // Acción al presionar el botón del corazón
+                },
+                icon: Image.asset(
+                  'assets/corazon.png', // Ruta de la imagen para el botón del corazón
+                  width: 50,
+                  height: 50,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+
+      Column(
+        children: [
+          // Contenido de la segunda columna
+          // Puedes agregar cualquier widget aquí
+          Text('Segunda Columna'),
+        ],
+      ),
+      Column(
+        children: [
+          // Contenido de la tercera columna
+          // Puedes agregar cualquier widget aquí
+          Text('Tercera Columna'),
+        ],
+      ), // Agrega más columnas si es necesario
+    ];
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor:
+              Color.fromARGB(255, 206, 205, 205), // Color azul para el AppBar
+          leading: IconButton(
+            onPressed: () {
+              // Función para el botón de filtro
+            },
+            icon: Icon(Icons.filter),
+            iconSize: 32,
+          ),
+          title: Image.asset(
+            'assets/TINDNET2.jpg',
+            width: 120,
+            height: 40,
+            alignment: Alignment.center, // Alinea la imagen al centro
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                // Función para el botón de chat
+              },
+              icon: Icon(Icons.chat),
+              iconSize: 32,
+            ),
+          ],
+        ),
+        body: _pages[
+            _selectedIndex], // Muestra el Column según el índice seleccionado
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Inicio',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Perfil',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.favorite),
+              label: 'Favoritos', // Cambia el texto si lo deseas
+            ), // Agrega más ítems si es necesario
+          ],
+          currentIndex: _selectedIndex, // Índice seleccionado
+          onTap: _onItemTapped, // Función para manejar el cambio de índice
         ),
       ),
     );
