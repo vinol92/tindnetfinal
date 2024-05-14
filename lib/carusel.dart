@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:tindnetfinal/card.dart';
 import 'package:tindnetfinal/models/persona_model.dart';
@@ -55,3 +55,4 @@ class _CarousselTindNetState extends State<CarousselTindNet> {
     );
   }
 }
+ */

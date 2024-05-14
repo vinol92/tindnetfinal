@@ -2,10 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:tindnetfinal/models/persona_model.dart';
 
 class UserCard extends StatelessWidget {
-  final Usuario user;
+  final String user;
+  final String categoria;
+  final String localidad;
+
   final String imgList;
 
-  const UserCard({Key? key, required this.user, required this.imgList})
+  const UserCard(
+      {Key? key,
+      required this.user,
+      required this.imgList,
+      required this.categoria,
+      required this.localidad})
       : super(key: key);
 
   @override
@@ -33,7 +41,7 @@ class UserCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    '${user.nombre} ${user.apellidos}',
+                    '${user}',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
@@ -42,7 +50,7 @@ class UserCard extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'Categoría: ${user.categoria}',
+                    'Categoría: ${categoria}',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -50,7 +58,7 @@ class UserCard extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'Localidad: ${user.localidad}',
+                    'Localidad: ${localidad}',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,

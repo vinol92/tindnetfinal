@@ -33,16 +33,16 @@ class _ChatScreenState extends State<ChatScreen> {
         name: 'Dolores Delano',
         profilePhoto: Data.profileImage,
       ),
-      // ChatUser(
-      //   id: '4',
-      //   name: 'Elba Surero',
-      //   profilePhoto: Data.profileImage,
-      // ),
-      // ChatUser(
-      //   id: '5',
-      //   name: 'Cortez Cabezas',
-      //   profilePhoto: Data.profileImage,
-      // ),
+      ChatUser(
+        id: '4',
+        name: 'Elba Surero',
+        profilePhoto: Data.profileImage,
+      ),
+      ChatUser(
+        id: '5',
+        name: 'Cortez Cabezas',
+        profilePhoto: Data.profileImage,
+      ),
     ],
   );
 
@@ -78,7 +78,7 @@ class _ChatScreenState extends State<ChatScreen> {
           profilePicture: Data.profileImage,
           backArrowColor: theme.backArrowColor,
           onBackPress: () => Navigator.pop(context),
-          chatTitle: "Chat view",
+          chatTitle: "Bodorrios",
           chatTitleTextStyle: TextStyle(
             color: theme.appBarTitleTextStyle,
             fontWeight: FontWeight.bold,
@@ -172,7 +172,7 @@ class _ChatScreenState extends State<ChatScreen> {
             textStyle: TextStyle(color: theme.inComingChatBubbleTextColor),
             onMessageRead: (message) {
               /// send your message reciepts to the other client
-              debugPrint('Message Read');
+              debugPrint('Mensaje leido');
             },
             senderNameTextStyle:
                 TextStyle(color: theme.inComingChatBubbleTextColor),

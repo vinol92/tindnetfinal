@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tindnetfinal/carusel.dart';
+import 'package:tindnetfinal/favoritos.dart';
 import 'package:tindnetfinal/models/persona_model.dart';
 import 'package:tindnetfinal/swipe_cards.dart';
 import 'card.dart';
@@ -79,13 +80,7 @@ class _TinderCardState extends State<TinderCard> {
           Text('Segunda Columna'),
         ],
       ),
-      Column(
-        children: [
-          // Contenido de la tercera columna
-          // Puedes agregar cualquier widget aquí
-          Text('Tercera Columna'),
-        ],
-      ), // Agrega más columnas si es necesario
+      Favoritos(),
     ];
     return SafeArea(
       child: Scaffold(

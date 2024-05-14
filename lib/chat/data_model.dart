@@ -7,35 +7,35 @@ class Data {
     Message(
       id: '1',
       message:
-          "Hi!,whe are a weding buisness, we can help you with your wedding",
+          "¡Hola! Somos una empresa de bodas, podemos ayudarte con tu boda",
       createdAt: DateTime.now(),
       sendBy: '1', // userId of who sends the message
       status: MessageStatus.read,
     ),
     Message(
       id: '2',
-      message: "",
+      message: "Hola si me gustaria tener algo de informacion",
       createdAt: DateTime.now(),
       sendBy: '2',
       status: MessageStatus.read,
     ),
     Message(
       id: '3',
-      message: "We can meet?I am free",
+      message: "¿Podemos quedar un dia para organizarnos? Estoy libre.",
       createdAt: DateTime.now(),
       sendBy: '1',
       status: MessageStatus.read,
     ),
     Message(
       id: '4',
-      message: "Can you write the time and place of the meeting?",
+      message: "¿Puedes escribir la hora y el lugar de la reunión?",
       createdAt: DateTime.now(),
       sendBy: '1',
       status: MessageStatus.read,
     ),
     Message(
       id: '5',
-      message: "That's fine",
+      message: "Sin problema",
       createdAt: DateTime.now(),
       sendBy: '2',
       reaction: Reaction(reactions: ['\u{2764}'], reactedUserIds: ['1']),
@@ -43,21 +43,21 @@ class Data {
     ),
     Message(
       id: '6',
-      message: "When to go ?",
+      message: "Cuando le venga bien",
       createdAt: DateTime.now(),
       sendBy: '3',
       status: MessageStatus.read,
     ),
     Message(
       id: '7',
-      message: "I guess Dolores will reply",
+      message: "Para mi esta bien por las tardes",
       createdAt: DateTime.now(),
       sendBy: '4',
       status: MessageStatus.read,
     ),
     Message(
       id: '8',
-      message: "https:/tindnetwork.com/",
+      message: "https://bit.ly/3JHS2Wl",
       createdAt: DateTime.now(),
       sendBy: '2',
       reaction: Reaction(
@@ -66,7 +66,7 @@ class Data {
       ),
       status: MessageStatus.read,
       replyMessage: const ReplyMessage(
-        message: "Can you write the time and place of the meeting?",
+        message: "PUdria enviarme la ubicacion y la hora?",
         replyTo: '1',
         replyBy: '2',
         messageId: '4',
@@ -74,7 +74,7 @@ class Data {
     ),
     Message(
       id: '9',
-      message: "Done",
+      message: "Sin problema",
       createdAt: DateTime.now(),
       sendBy: '1',
       status: MessageStatus.read,
@@ -89,7 +89,7 @@ class Data {
     ),
     Message(
       id: '10',
-      message: "Thank you!!",
+      message: "Gracias!",
       status: MessageStatus.read,
       createdAt: DateTime.now(),
       sendBy: '1',
